@@ -3,6 +3,7 @@ const addMovie = document.querySelector("header button");
 const backdrop = document.getElementById("backdrop");
 const cancelAddMovie = addModal.querySelector(".btn--passive");
 const confirmAddMovie = addModal.querySelector(".btn--success");
+const inputElements = addModal.querySelectorAll("input");
 
 const toggleBackdrop = () => {
   backdrop.classList.toggle("visible");
@@ -18,7 +19,21 @@ const cancelMovie = () => {
 };
 
 const addMovieHandler = () => {
-    
+  const titleValue = document.getElementById("title").value;
+  const imageValue = document.getElementById("image-url").value;
+  const ratingValue = document.getElementById("rating").value;
+
+  if (
+    titleValue.trim() === "" ||
+    imageValue.trim() === "" ||
+    ratingValue.trim() === ""
+  ) {
+    alert("Input values cannot contain spaces in the beginning or end.");
+    return;
+  } else if (+ratingValue < 1 || +ratingValue > 5) {
+    alert("Rating must be contained in the range of 1-5");
+    return;
+  }
 };
 
 const backdropHandler = () => {
