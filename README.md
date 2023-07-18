@@ -38,7 +38,7 @@ The code is structured into several JavaScript functions to handle different fun
 - `closeMovieDeletionModal()`: Closes the delete movie modal and hides the backdrop.
 - `deleteMovieHandler(movieId)`: Handles the deletion of a movie from the collection.
 - `startDeleteMovieHandler(movieId)`: Displays the delete movie modal and confirms the deletion.
-- `renderNewMovieElement(id, title, imageUrl, rating)`: Renders a new movie element in the movie list.
+- `renderMovie(id, title, imageUrl, rating)`: Renders a new movie element in the movie list.
 - `closeMovie()`: Closes the add movie modal.
 - `showMovie()`: Displays the add movie modal and shows the backdrop.
 - `clearInputs()`: Clears the input fields in the add movie modal.
