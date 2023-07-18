@@ -16,8 +16,15 @@ const toggleModal = () => {
   toggleBackdrop();
 };
 
+const clearInputs = () => {
+  for (const input of inputElements) {
+    input.value = "";
+  }
+};
+
 const cancelMovie = () => {
   toggleModal();
+  clearInputs();
 };
 
 const addMovieHandler = () => {
@@ -42,6 +49,11 @@ const addMovieHandler = () => {
     image: imageValue,
     rating: ratingValue,
   };
+
+  movies.push(newMovie);
+  console.log(movies);
+  toggleModal();
+  clearInputs();
 };
 
 const backdropHandler = () => {
