@@ -49,3 +49,7 @@ The code is structured into several JavaScript functions to handle different fun
 ## Contributions
 
 Contributions to the movie collection app are welcome. If you find a bug or have an idea for an improvement, feel free to open an issue or submit a pull request.
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out.
