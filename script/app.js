@@ -22,7 +22,7 @@ const clearInputs = () => {
   }
 };
 
-const cancelMovie = () => {
+const cancelMovieHandler = () => {
   toggleModal();
   clearInputs();
 };
@@ -62,5 +62,5 @@ const backdropHandler = () => {
 
 addMovie.addEventListener("click", toggleModal);
 backdrop.addEventListener("click", toggleBackdrop);
-cancelAddMovie.addEventListener("click", cancelMovie);
+cancelAddMovie.addEventListener("click", cancelMovieHandler);
 confirmAddMovie.addEventListener("click", addMovieHandler);
