@@ -31,7 +31,7 @@ const closeMovieDeletionModal = () => {
 //   deleteMovie();
 // };
 
-const deleteMovieHandler = movieId => {
+const deleteMovieHandler = (movieId) => {
   let index = 0;
   for (const movie of movies) {
     if (movie.id === movieId) {
@@ -50,7 +50,10 @@ const startDeleteMovieHandler = (movieId) => {
   const cancelDeletion = deleteMovieModal.querySelector(".btn--passive");
   let confirmDeletion = deleteMovieModal.querySelector(".btn--danger");
 
-  confirmDeletion.replaceWith(confirmDeletion.cloneNode(true));
+  confirmDeletion.parentElement.replaceChild(
+    confirmDeletion.cloneNode(true),
+    confirmDeletion
+  );
 
   confirmDeletion = deleteMovieModal.querySelector(".btn--danger");
 
