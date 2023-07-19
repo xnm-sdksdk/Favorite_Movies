@@ -6,6 +6,7 @@ const confirmAddMovie = addMovieModal.querySelector(".btn--success");
 const inputElements = addMovieModal.querySelectorAll("input");
 const entryText = document.getElementById("entry-text");
 const deleteMovieModal = document.getElementById("delete-modal");
+const listRoot = document.getElementById("movie-list");
 
 const movies = [];
 
@@ -14,11 +15,7 @@ const toggleBackdrop = () => {
 };
 
 const updateUI = () => {
-  if (movies.length === 0) {
-    entryText.style.display = "block";
-  } else {
-    entryText.style.display = "none";
-  }
+  entryText.style.display = movies.length === 0 ? "block" : "none";
 };
 
 const closeMovieDeletionModal = () => {
@@ -26,22 +23,14 @@ const closeMovieDeletionModal = () => {
   deleteMovieModal.classList.remove("visible");
 };
 
-// const cancelMovieDeletion = () => {
-//   toggleBackdrop();
-//   deleteMovie();
-// };
-
 const deleteMovieHandler = (movieId) => {
-  let index = 0;
-  for (const movie of movies) {
-    if (movie.id === movieId) {
-      break;
-    }
-    index++;
+  const index = movies.findIndex((movie) => movie.id === movieId);
+  if (index === -1) {
+    return;
   }
   movies.splice(index, 1);
-  const listRoot = document.getElementById("movie-list");
   listRoot.children[index].remove();
+  updateUI();
 };
 
 const startDeleteMovieHandler = (movieId) => {
@@ -79,8 +68,8 @@ const renderMovie = (id, title, imageUrl, rating) => {
   </div>
   `;
   newLi.addEventListener("click", startDeleteMovieHandler.bind(null, id));
-  const listRoot = document.getElementById("movie-list");
   listRoot.append(newLi);
+  updateUI();
 };
 
 const closeMovieModal = () => {
@@ -105,19 +94,12 @@ const cancelAddMovieHandler = () => {
 };
 
 const addMovieHandler = () => {
-  const titleValue = document.getElementById("title").value;
-  const imageValue = document.getElementById("image-url").value;
+  const titleValue = document.getElementById("title").value.trim();
+  const imageValue = document.getElementById("image-url").value.trim();
   const ratingValue = document.getElementById("rating").value;
 
-  if (
-    titleValue.trim() === "" ||
-    imageValue.trim() === "" ||
-    ratingValue.trim() === ""
-  ) {
-    alert("Input values cannot contain spaces in the beginning or end.");
-    return;
-  } else if (+ratingValue < 1 || +ratingValue > 5) {
-    alert("Rating must be contained in the range of 1-5");
+  if (!titleValue || !imageValue || +ratingValue < 1 || +ratingValue > 5) {
+    alert("Provide valid inputs.");
     return;
   }
 
@@ -134,7 +116,7 @@ const addMovieHandler = () => {
   toggleBackdrop();
   clearInputs();
   renderMovie(newMovie.id, newMovie.title, newMovie.image, newMovie.rating);
-  updateUI();
+  //updateUI();
 };
 
 const backdropClickHandler = () => {
