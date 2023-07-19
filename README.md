@@ -1,12 +1,13 @@
-# Movie Collection App
+# Movie Library
 
-This is a simple web application for managing a collection of movies. Users can add new movies, view existing movies, and delete movies from the collection.
+The Movie Library is a web application that allows users to manage their movie collection. Users can add new movies by providing the title, image URL, and rating, and they can also delete movies from the library. The application provides a user-friendly interface with modals for adding and deleting movies, and it updates the movie list in real-time.
 
 ## Features
 
-- Add a new movie: Users can add a new movie to the collection by providing the title, image URL, and rating (between 1 and 5 stars) of the movie.
-- View movies: The application displays a list of movies in the collection, showing the movie title, image, and rating.
-- Delete movies: Users can delete a movie from the collection by clicking on it and confirming the deletion.
+- Add movies with a title, image URL, and rating.
+- Delete movies from the library.
+- Responsive and user-friendly interface.
+- Real-time update of movie list display.
 
 ## Getting Started
 
@@ -18,10 +19,15 @@ To run the application, follow these steps:
 
 ## Usage
 
-- Click on the "Add Movie" button in the header to open the add movie modal.
-- Enter the movie details (title, image URL, and rating) and click "Add Movie" to add it to the collection.
-- Click on a movie in the list to open the delete movie modal.
-- Confirm the deletion to remove the movie from the collection.
+1. Clone the repository or download the source code.
+2. Open the `index.html` file in a web browser.
+3. Click the "Add Movie" button to open the modal for adding a new movie.
+4. Enter the movie details (title, image URL, and rating) in the input fields.
+5. Click the "Add Movie" button in the modal to add the movie to the library.
+6. The movie will be displayed in the movie list.
+7. To delete a movie, click on the desired movie in the movie list.
+8. Confirm the deletion in the delete movie modal.
+9. The movie will be removed from the library and the movie list will be updated.
 
 ## Technologies Used
 
@@ -29,22 +35,9 @@ To run the application, follow these steps:
 - CSS
 - JavaScript
 
-## Code Structure
+## Compatibility
 
-The code is structured into several JavaScript functions to handle different functionalities of the application:
-
-- `toggleBackdrop()`: Toggles the visibility of the backdrop element.
-- `updateUI()`: Updates the user interface based on the current state of the movie collection.
-- `closeMovieDeletionModal()`: Closes the delete movie modal and hides the backdrop.
-- `deleteMovieHandler(movieId)`: Handles the deletion of a movie from the collection.
-- `startDeleteMovieHandler(movieId)`: Displays the delete movie modal and confirms the deletion.
-- `renderMovie(id, title, imageUrl, rating)`: Renders a new movie element in the movie list.
-- `closeMovie()`: Closes the add movie modal.
-- `showMovie()`: Displays the add movie modal and shows the backdrop.
-- `clearInputs()`: Clears the input fields in the add movie modal.
-- `cancelMovieHandler()`: Cancels the addition of a new movie and closes the add movie modal.
-- `addMovieHandler()`: Handles the addition of a new movie to the collection.
-- `backdropHandler()`: Handles clicks on the backdrop element.
+The Movie Library is compatible with modern web browsers that support JavaScript and the required HTML and CSS features.
 
 ## Contributions
 
@@ -53,3 +46,44 @@ Contributions to the movie collection app are welcome. If you find a bug or have
 ## Contact
 
 If you have any questions or suggestions, feel free to reach out.
+
+# Movie Library
+
+The Movie Library is a web application that allows users to manage their movie collection. Users can add new movies by providing the title, image URL, and rating, and they can also delete movies from the library. The application provides a user-friendly interface with modals for adding and deleting movies, and it updates the movie list in real-time.
+
+## Features
+
+- Add movies with a title, image URL, and rating.
+- Delete movies from the library.
+- Responsive and user-friendly interface.
+- Real-time update of movie list display.
+
+## Usage
+
+1. Clone the repository or download the source code.
+2. Open the `index.html` file in a web browser.
+3. Click the "Add Movie" button to open the modal for adding a new movie.
+4. Enter the movie details (title, image URL, and rating) in the input fields.
+5. Click the "Add Movie" button in the modal to add the movie to the library.
+6. The movie will be displayed in the movie list.
+7. To delete a movie, click on the desired movie in the movie list.
+8. Confirm the deletion in the delete movie modal.
+9. The movie will be removed from the library and the movie list will be updated.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+## Compatibility
+
+The Movie Library is compatible with modern web browsers that support JavaScript and the required HTML and CSS features.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
